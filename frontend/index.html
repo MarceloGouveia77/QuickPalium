@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>QuickPalium</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="col-12" style="margin-top: 5%">
+        <div class="row">
+          <div class="col-6">
+            <h3>QuickPalium</h3>
+          </div>
+          <div class="col-6">
+            <a href="/frontend/historico.html" style="float: right;" target="_blank" class="btn btn-sm btn-primary">Histórico</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 mt-4">
+        <div class="card">
+          <div class="card-header">
+              <h3 class="card-title">Cadastro</h3>
+            </div>
+          </div>
+          <div class="card-body bg-form text-white">
+            <div class="row cadastro">
+              <form id="cadastro-form" method="POST">
+                <div class="mb-3">
+                  <label for="nome" class="form-label">Nome</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="nome"
+                    name="nome"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="sexo" class="form-label">Sexo</label>
+                  <select class="form-select" id="sexo" name="sexo">
+                    <option selected value="Masculino">Masculino</option>
+                    <option value="Feminino">Feminino</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label for="idade" class="form-label">Idade</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="idade"
+                    name="idade"
+                    required
+                  />
+                </div>
+                <a
+                  href="#"
+                  class="btn btn-success"
+                  style="float: right"
+                  onclick="termo();"
+                  rel="noopener noreferrer"
+                  >Próximo</a
+                >
+              </form>
+            </div>
+
+            <div class="row termo d-none">
+              <p
+                style="
+                  margin-top: 0cm;
+                  margin-right: 0cm;
+                  margin-bottom: 8pt;
+                  margin-left: 0cm;
+                  line-height: 107%;
+                  font-size: 16px;
+                  font-family: 'Times New Roman', serif;
+                  text-align: center;
+                "
+              >
+                <strong>TERMO DE CONSENTIMENTO LIVRE E ESCLARECIDO</strong>
+              </p>
+              <p
+                style="
+                  margin-top: 0cm;
+                  margin-right: 0cm;
+                  margin-bottom: 8pt;
+                  margin-left: 0cm;
+                  line-height: 107%;
+                  font-size: 16px;
+                  font-family: 'Times New Roman', serif;
+                  text-align: justify;
+                "
+              >
+                <strong>T&iacute;tulo do Projeto de Pesquisa:&nbsp;</strong
+                >QuickPalium: Triando pacientes para uma abordagem paliativa em
+                Unidades de Terapia Intensiva
+              </p>
+              <p
+                style="
+                  margin-top: 0cm;
+                  margin-right: 0cm;
+                  margin-bottom: 8pt;
+                  margin-left: 0cm;
+                  line-height: 107%;
+                  font-size: 16px;
+                  font-family: 'Times New Roman', serif;
+                  text-align: justify;
+                "
+              >
+                <strong>Pesquisador Respons&aacute;vel:</strong> Nader Alziro
+                Kassem Fares
+              </p>
+              <p
+                style="
+                  margin-top: 0cm;
+                  margin-right: 0cm;
+                  margin-bottom: 8pt;
+                  margin-left: 0cm;
+                  line-height: 107%;
+                  font-size: 16px;
+                  font-family: 'Times New Roman', serif;
+                  text-align: justify;
+                "
+              >
+                <strong>Equipe de Pesquisa:</strong> Ana Maria Porto Carvas,
+                Daniel Teixeira Marques, Eliza de Oliveira Borges, Gabriela de
+                Moraes Pedroso Ribeiro
+              </p>
+              <p
+                style="
+                  margin-top: 0cm;
+                  margin-right: 0cm;
+                  margin-bottom: 8pt;
+                  margin-left: 0cm;
+                  line-height: 107%;
+                  font-size: 16px;
+                  font-family: 'Times New Roman', serif;
+                  text-align: justify;
+                "
+              >
+                <strong>Local onde ser&aacute; realizada a pesquisa:</strong>
+                Hospital Geral de Goi&acirc;nia - HGG
+              </p>
+              <p
+                style="
+                  margin-top: 0cm;
+                  margin-right: 0cm;
+                  margin-bottom: 8pt;
+                  margin-left: 0cm;
+                  line-height: 107%;
+                  font-size: 16px;
+                  font-family: 'Times New Roman', serif;
+                  text-align: justify;
+                "
+              >
+                <strong>Nome do Participante da Pesquisa:&nbsp;</strong>
+              </p>
+              <p
+                style="
+                  margin-top: 0cm;
+                  margin-right: 0cm;
+                  margin-bottom: 8pt;
+                  margin-left: 0cm;
+                  line-height: 107%;
+                  font-size: 16px;
+                  font-family: 'Times New Roman', serif;
+                  text-align: justify;
+                "
+              >
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;Voc&ecirc;
+                est&aacute; sendo convidado (a) para participar como
+                volunt&aacute;rio nesta pesquisa. Meu nome &eacute; Nader Alziro
+                Kassem Fares, sou o pesquisador respons&aacute;vel, e minha
+                &aacute;rea de atua&ccedil;&atilde;o &eacute; a Medicina.
+              </p>
+              <p
+                style="
+                  margin-top: 0cm;
+                  margin-right: 0cm;
+                  margin-bottom: 8pt;
+                  margin-left: 0cm;
+                  line-height: 107%;
+                  font-size: 16px;
+                  font-family: 'Times New Roman', serif;
+                  text-align: justify;
+                "
+              >
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;O convite
+                est&aacute; sendo feito porque voc&ecirc; trabalha como
+                m&eacute;dico intensivista na UTI do HGG. Sua
+                contribui&ccedil;&atilde;o &eacute; importante, por&eacute;m,
+                voc&ecirc; n&atilde;o deve participar contra a sua vontade.
+              </p>
+              <p
+                style="
+                  margin-top: 0cm;
+                  margin-right: 0cm;
+                  margin-bottom: 8pt;
+                  margin-left: 0cm;
+                  line-height: 107%;
+                  font-size: 16px;
+                  font-family: 'Times New Roman', serif;
+                  text-align: justify;
+                "
+              >
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;A qualquer
+                momento, antes, durante e depois da pesquisa, voc&ecirc;
+                poder&aacute; solicitar maiores esclarecimentos. Em caso de
+                d&uacute;vidas sobre a pesquisa, voc&ecirc; poder&aacute; entrar
+                em contato comigo, Pesquisador(a) Respons&aacute;vel Nader
+                Alziro Kassem Fares, no telefone (62) 998362894 ou e-mail:
+                nader.kassem@gmail.com. Se voc&ecirc; tiver alguma d&uacute;vida
+                sobre os seus direitos como participante nesta pesquisa ou
+                quest&otilde;es &eacute;ticas, voc&ecirc; poder&aacute; entrar
+                em contato com o Comit&ecirc; de &Eacute;tica em Pesquisa do
+                Hospital Alberto Rassi &ndash;HGG (um grupo n&atilde;o
+                remunerado, formado por diferentes profissionais e membros da
+                sociedade, que avaliam um estudo para julgar se ele &eacute;
+                &eacute;tico e garantir a prote&ccedil;&atilde;o dos
+                participantes), situado na Avenida Anhanguera, n&ordm; 6.479,
+                Setor Oeste, Goi&acirc;nia, Goi&aacute;s, pelo telefone (62)
+                3209-9917, de segunda a sexta-feira, no hor&aacute;rio de 8h
+                &agrave;s 18h ou pelo e-mail hgg.cep@idtech.org.br.
+              </p>
+              <p
+                style="
+                  margin-top: 0cm;
+                  margin-right: 0cm;
+                  margin-bottom: 8pt;
+                  margin-left: 0cm;
+                  line-height: 107%;
+                  font-size: 16px;
+                  font-family: 'Times New Roman', serif;
+                  text-align: justify;
+                "
+              >
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;Voc&ecirc; tem
+                total liberdade para se recusar a participar, n&atilde;o sendo
+                prejudicado, penalizado ou responsabilizado de forma alguma por
+                sua recusa. Se aceitar participar e depois retirar seu
+                consentimento, tamb&eacute;m em nada ser&aacute; prejudicado(a).
+              </p>
+              <p
+                style="
+                  margin-top: 0cm;
+                  margin-right: 0cm;
+                  margin-bottom: 8pt;
+                  margin-left: 0cm;
+                  line-height: 107%;
+                  font-size: 16px;
+                  font-family: 'Times New Roman', serif;
+                  text-align: justify;
+                "
+              >
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;Todas as
+                informa&ccedil;&otilde;es coletadas neste estudo ser&atilde;o
+                estritamente confidenciais e voc&ecirc; n&atilde;o
+                precisar&aacute; se identificar para utilizar a ferramenta que
+                propomos. Os resultados da pesquisa ser&atilde;o publicados
+                independentemente dos resultados obtidos. Os dados coletados
+                ser&atilde;o utilizados apenas para esta pesquisa e n&atilde;o
+                ser&atilde;o armazenados para estudos futuros.
+              </p>
+              <p
+                style="
+                  margin-top: 0cm;
+                  margin-right: 0cm;
+                  margin-bottom: 8pt;
+                  margin-left: 0cm;
+                  line-height: 107%;
+                  font-size: 16px;
+                  font-family: 'Times New Roman', serif;
+                  text-align: justify;
+                "
+              >
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;Ap&oacute;s ser
+                apresentado e esclarecido sobre as informa&ccedil;&otilde;es
+                abaixo descritas, no caso de aceitar participar do estudo,
+                voc&ecirc; dever&aacute; marcar a op&ccedil;&atilde;o
+                <strong
+                  >&ldquo;Declaro que li o Termo de Consentimento Livre e
+                  Esclarecido, compreendi e estou de acordo com as
+                  condi&ccedil;&otilde;es apresentadas e ACEITO participar da
+                  pesquisa</strong
+                >&rdquo;. Voc&ecirc; s&oacute; poder&aacute; utilizar a
+                ferramenta de triagem que propomos, denominada
+                &ldquo;QuickPalium&rdquo;, ap&oacute;s ler o TCLE e marcar esta
+                op&ccedil;&atilde;o. &Eacute; importante que voc&ecirc; grave
+                uma c&oacute;pia eletr&ocirc;nica do Termo de Consentimento
+                Livre e Esclarecido seja atrav&eacute;s da op&ccedil;&atilde;o
+                &ldquo;PrintScreen&rdquo; da tela ou salvando uma c&oacute;pia
+                da p&aacute;gina do navegador utilizado por voc&ecirc;.
+              </p>
+              <p
+                style="
+                  margin-top: 0cm;
+                  margin-right: 0cm;
+                  margin-bottom: 8pt;
+                  margin-left: 0cm;
+                  line-height: 107%;
+                  font-size: 16px;
+                  font-family: 'Times New Roman', serif;
+                  text-align: justify;
+                "
+              >
+                &nbsp;
+              </p>
+              <p
+                style="
+                  margin-top: 0cm;
+                  margin-right: 0cm;
+                  margin-bottom: 8pt;
+                  margin-left: 0cm;
+                  line-height: 107%;
+                  font-size: 16px;
+                  font-family: 'Times New Roman', serif;
+                  text-align: justify;
+                "
+              >
+                <strong
+                  ><em>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</em
+                  >Informa&ccedil;&otilde;es importantes que voc&ecirc; precisa
+                  saber sobre a pesquisa:</strong
+                >
+              </p>
+              <p
+                style="
+                  margin-top: 0cm;
+                  margin-right: 0cm;
+                  margin-bottom: 8pt;
+                  margin-left: 0cm;
+                  line-height: 107%;
+                  font-size: 16px;
+                  font-family: 'Times New Roman', serif;
+                  text-align: justify;
+                "
+              >
+                1. <strong>Objetivos da pesquisa</strong>: Esta pesquisa tem
+                como objetivo &ldquo;testar a efetividade de uma nova ferramenta
+                cl&iacute;nica de triagem para cuidados paliativos em pacientes
+                admitidos em uma Unidade de Terapia Intensiva.&rdquo;
+              </p>
+              <p
+                style="
+                  margin-top: 0cm;
+                  margin-right: 0cm;
+                  margin-bottom: 8pt;
+                  margin-left: 0cm;
+                  line-height: 107%;
+                  font-size: 16px;
+                  font-family: 'Times New Roman', serif;
+                  text-align: justify;
+                "
+              >
+                2.
+                <strong
+                  >Justificativa para realiza&ccedil;&atilde;o da
+                  pesquisa:</strong
+                >
+                Este estudo ser&aacute; importante uma vez que poder&aacute;
+                originar uma ferramenta de suporte &agrave; decis&atilde;o
+                cl&iacute;nica de m&eacute;dicos intensivistas quanto a limites
+                terap&ecirc;uticos para pacientes em Unidade de Terapia
+                Intensiva, de forma que o tratamento proposto nunca seja mais
+                danoso do que a pr&oacute;pria doen&ccedil;a, indo, assim, de
+                encontro aos princ&iacute;pios bio&eacute;ticos da
+                justi&ccedil;a, autonomia, benefic&ecirc;ncia e
+                n&atilde;o-malefic&ecirc;ncia.
+              </p>
+              <p
+                style="
+                  margin-top: 0cm;
+                  margin-right: 0cm;
+                  margin-bottom: 8pt;
+                  margin-left: 0cm;
+                  line-height: 107%;
+                  font-size: 16px;
+                  font-family: 'Times New Roman', serif;
+                  text-align: justify;
+                "
+              >
+                3.
+                <strong>Popula&ccedil;&atilde;o da pesquisa:</strong>
+                M&eacute;dicos intensivista que trabalham na UTI Geral do HGG
+              </p>
+              <p
+                style="
+                  margin-top: 0cm;
+                  margin-right: 0cm;
+                  margin-bottom: 8pt;
+                  margin-left: 0cm;
+                  line-height: 107%;
+                  font-size: 16px;
+                  font-family: 'Times New Roman', serif;
+                  text-align: justify;
+                "
+              >
+                4.
+                <strong
+                  >Detalhamento dos procedimentos que ser&atilde;o
+                  realizados</strong
+                >: Ser&aacute; disponibilizado aos m&eacute;dicos intensivistas
+                da UTI Geral do HGG uma ferramenta para triagem de pacientes
+                quanto &agrave; elegibilidade para cuidados paliativos,
+                denominada &ldquo;QuickPalium&rdquo;. Essa ferramenta
+                estar&aacute; dispon&iacute;vel por meio de um site e
+                dever&aacute; ser aplicada a todos os pacientes admitidos na UTI
+                Geral do HGG no per&iacute;odo de um ano. Ressaltamos que para
+                fazer uso da referida ferramenta &eacute; preciso aceitar as
+                condi&ccedil;&otilde;es apresentadas neste termo.
+              </p>
+              <p
+                style="
+                  margin-top: 0cm;
+                  margin-right: 0cm;
+                  margin-bottom: 8pt;
+                  margin-left: 0cm;
+                  line-height: 107%;
+                  font-size: 16px;
+                  font-family: 'Times New Roman', serif;
+                  text-align: justify;
+                "
+              >
+                5. <strong>Forma de acompanhamento</strong>: Durante o
+                per&iacute;odo de um ano em que a ferramenta estar&aacute; em
+                teste, ser&atilde;o realizadas an&aacute;lises parciais dos
+                resultados em 2 meses, 4 meses e 8 meses a partir do
+                in&iacute;cio do estudo. Nessas an&aacute;lises parciais,
+                poder&atilde;o ser identificadas poss&iacute;veis dificuldades e
+                obst&aacute;culos no uso do instrumento ou poss&iacute;veis
+                danos e desconfortos que ele possa causar aos participantes, o
+                que motivar&aacute; a busca de solu&ccedil;&otilde;es ou
+                at&eacute; mesmo a suspens&atilde;o do projeto.
+              </p>
+              <p
+                style="
+                  margin-top: 0cm;
+                  margin-right: 0cm;
+                  margin-bottom: 8pt;
+                  margin-left: 0cm;
+                  line-height: 107%;
+                  font-size: 16px;
+                  font-family: 'Times New Roman', serif;
+                  text-align: justify;
+                "
+              >
+                6. <strong>Riscos</strong>: A utiliza&ccedil;&atilde;o da
+                ferramenta proposta poder&aacute; demandar maior tempo gasto na
+                admiss&atilde;o dos pacientes na UTI devido a
+                cria&ccedil;&atilde;o de mais uma etapa a ser seguida. Para
+                minimizar esse risco, a ferramenta foi constru&iacute;da em meio
+                digital e &eacute; baseada em perguntas objetivas e em dados que
+                j&aacute; s&atilde;o obtidos a partir da coleta da
+                hist&oacute;ria cl&iacute;nica, o que j&aacute; faz parte da
+                atividade habitual do m&eacute;dico. Al&eacute;m disso,
+                haver&aacute; espa&ccedil;o na pr&oacute;pria ferramenta para
+                sugest&otilde;es e cr&iacute;ticas dos usu&aacute;rios quanto ao
+                uso da ferramenta, e os eventuais problemas identificados
+                poder&atilde;o ser corrigidos ao longo das an&aacute;lises
+                parciais previstas no cronograma do estudo.
+              </p>
+              <p
+                style="
+                  margin-top: 0cm;
+                  margin-right: 0cm;
+                  margin-bottom: 8pt;
+                  margin-left: 0cm;
+                  line-height: 107%;
+                  font-size: 16px;
+                  font-family: 'Times New Roman', serif;
+                  text-align: justify;
+                "
+              >
+                7. <strong>Benef&iacute;cios:</strong> A
+                utiliza&ccedil;&atilde;o da ferramenta de triagem poder&aacute;
+                trazer mais seguran&ccedil;a e confiabilidade aos m&eacute;dicos
+                intensivistas na tomada de decis&otilde;es cl&iacute;nicas,
+                principalmente no que tange a casos mais complexos e com sinais
+                de refratariedade terap&ecirc;utica, auxiliando a evitar a
+                distan&aacute;sia.
+              </p>
+              <p
+                style="
+                  margin-top: 0cm;
+                  margin-right: 0cm;
+                  margin-bottom: 8pt;
+                  margin-left: 0cm;
+                  line-height: 107%;
+                  font-size: 16px;
+                  font-family: 'Times New Roman', serif;
+                  text-align: justify;
+                "
+              >
+                8. <strong>Despesas e custos</strong>: Este estudo n&atilde;o
+                acarretar&aacute; nenhum tipo de despesa para voc&ecirc;.
+              </p>
+              <p
+                style="
+                  margin-top: 0cm;
+                  margin-right: 0cm;
+                  margin-bottom: 8pt;
+                  margin-left: 0cm;
+                  line-height: 107%;
+                  font-size: 16px;
+                  font-family: 'Times New Roman', serif;
+                  text-align: justify;
+                "
+              >
+                9. <strong>Indeniza&ccedil;&atilde;o</strong>: Voc&ecirc;
+                ter&aacute; direito a buscar indeniza&ccedil;&atilde;o por
+                qualquer dano que venha a sofrer com a
+                participa&ccedil;&atilde;o nesta pesquisa.
+              </p>
+              <p
+                style="
+                  margin-top: 0cm;
+                  margin-right: 0cm;
+                  margin-bottom: 8pt;
+                  margin-left: 0cm;
+                  line-height: 107%;
+                  font-size: 16px;
+                  font-family: 'Times New Roman', serif;
+                  text-align: justify;
+                "
+              >
+                11.
+                <strong
+                  >Per&iacute;odo de participa&ccedil;&atilde;o e
+                  previs&atilde;o de t&eacute;rmino da pesquisa:</strong
+                >
+                a sua participa&ccedil;&atilde;o dever&aacute; ocorrer no
+                per&iacute;odo de um ano a contar do in&iacute;cio do estudo.
+              </p>
+              <p
+                style="
+                  margin-top: 0cm;
+                  margin-right: 0cm;
+                  margin-bottom: 8pt;
+                  margin-left: 0cm;
+                  line-height: 107%;
+                  font-size: 16px;
+                  font-family: 'Times New Roman', serif;
+                  text-align: center;
+                "
+              >
+                <strong>&nbsp;</strong>
+              </p>
+              <p
+                style="
+                  margin-top: 0cm;
+                  margin-right: 0cm;
+                  margin-bottom: 8pt;
+                  margin-left: 0cm;
+                  line-height: 107%;
+                  font-size: 16px;
+                  font-family: 'Times New Roman', serif;
+                  text-align: center;
+                "
+              >
+                <strong
+                  >Goi&acirc;nia, <span class="data-termo"></span></strong
+                >
+              </p>
+              <p
+                style="
+                  margin-top: 0cm;
+                  margin-right: 0cm;
+                  margin-bottom: 0cm;
+                  margin-left: 0cm;
+                  line-height: 107%;
+                  font-size: 16px;
+                  font-family: 'Times New Roman', serif;
+                  text-align: center;
+                "
+              >
+                &nbsp;
+              </p>
+              <p
+                style="
+                  margin-top: 0cm;
+                  margin-right: 0cm;
+                  margin-bottom: 0cm;
+                  margin-left: 0cm;
+                  line-height: 107%;
+                  font-size: 16px;
+                  font-family: 'Times New Roman', serif;
+                  text-align: center;
+                "
+              >
+                _______________________________________
+              </p>
+              <p
+                style="
+                  margin-top: 0cm;
+                  margin-right: 0cm;
+                  margin-bottom: 0cm;
+                  margin-left: 0cm;
+                  line-height: 107%;
+                  font-size: 16px;
+                  font-family: 'Times New Roman', serif;
+                  text-align: center;
+                "
+              >
+                <strong>Nader Alziro Kassem Fares</strong>
+              </p>
+              <p
+                style="
+                  margin-top: 0cm;
+                  margin-right: 0cm;
+                  margin-bottom: 8pt;
+                  margin-left: 0cm;
+                  line-height: 107%;
+                  font-size: 16px;
+                  font-family: 'Times New Roman', serif;
+                  text-align: justify;
+                "
+              >
+                <strong>&nbsp;</strong>
+              </p>
+              <p
+                style="
+                  margin-top: 0cm;
+                  margin-right: 0cm;
+                  margin-bottom: 8pt;
+                  margin-left: 0cm;
+                  line-height: 107%;
+                  font-size: 16px;
+                  font-family: 'Times New Roman', serif;
+                  text-align: justify;
+                "
+              >
+                <strong>Consentimento do participante</strong>
+              </p>
+              <p
+                style="
+                  margin-top: 0cm;
+                  margin-right: 0cm;
+                  margin-bottom: 0cm;
+                  margin-left: 0cm;
+                  line-height: 107%;
+                  font-size: 16px;
+                  font-family: 'Times New Roman', serif;
+                  text-align: justify;
+                "
+              >
+                Eu declaro que concordo em participar do estudo &ldquo;<em
+                  >QuickPalium: Triando pacientes para uma abordagem paliativa
+                  em Unidades de Terapia Intensiva&rdquo;</em
+                >
+                como volunt&aacute;rio de pesquisa. Declaro que compreendi
+                perfeitamente tudo o que me foi informado sobre a minha
+                participa&ccedil;&atilde;o no estudo mencionado, tendo sido
+                devidamente informado e esclarecido pelo Pesquisador(a)<strong
+                  >&nbsp;Nader Alziro Kassem Fares&nbsp;</strong
+                >sobre o objetivo desta pesquisa, os procedimentos nela
+                envolvidos, assim como os poss&iacute;veis riscos e
+                benef&iacute;cios decorrentes de minha
+                participa&ccedil;&atilde;o. Estou consciente de todos os meus
+                direitos bem como das minhas responsabilidades. Foi-me garantido
+                que posso retirar meu consentimento a qualquer momento, sem que
+                isto me cause qualquer preju&iacute;zo, penalidade ou
+                responsabilidade. Autorizo a divulga&ccedil;&atilde;o dos dados
+                obtidos neste estudo mantendo em sigilo minha identidade.
+              </p>
+              <p
+                style="
+                  margin-top: 0cm;
+                  margin-right: 0cm;
+                  margin-bottom: 8pt;
+                  margin-left: 0cm;
+                  line-height: 107%;
+                  font-size: 16px;
+                  font-family: 'Times New Roman', serif;
+                  text-align: justify;
+                "
+              >
+                <s><span style="text-decoration: none">&nbsp;</span></s>
+              </p>
+              <p
+                style="
+                  margin-top: 0cm;
+                  margin-right: 0cm;
+                  margin-bottom: 8pt;
+                  margin-left: 0cm;
+                  line-height: 107%;
+                  font-size: 16px;
+                  font-family: 'Times New Roman', serif;
+                  text-align: center;
+                "
+              >
+                <strong
+                  >Goi&acirc;nia, <span class="data-termo"></span></strong
+                >
+              </p>
+              <p
+                style="
+                  margin-top: 0cm;
+                  margin-right: 0cm;
+                  margin-bottom: 8pt;
+                  margin-left: 0cm;
+                  line-height: 107%;
+                  font-size: 16px;
+                  font-family: 'Times New Roman', serif;
+                "
+              >
+                &nbsp;
+              </p>
+              <p
+                style="
+                  margin-top: 0cm;
+                  margin-right: 0cm;
+                  margin-bottom: 0cm;
+                  margin-left: 0cm;
+                  line-height: 107%;
+                  font-size: 16px;
+                  font-family: 'Times New Roman', serif;
+                  text-align: center;
+                "
+              >
+                <strong
+                  >_____________________________________________________________</strong
+                >
+              </p>
+              <p
+                style="
+                  margin-top: 0cm;
+                  margin-right: 0cm;
+                  margin-bottom: 0cm;
+                  margin-left: 0cm;
+                  line-height: 107%;
+                  font-size: 16px;
+                  font-family: 'Times New Roman', serif;
+                  text-align: center;
+                "
+              >
+                <strong>
+                <span class="participante-termo"></span></strong>
+              </p>
+
+              <a
+                  href="#"
+                  class="btn btn-success mt-3"
+                  style="float: right"
+                  onclick="start();"
+                  rel="noopener noreferrer"
+                  >Eu aceito</a
+                >
+                <a
+                  href=""
+                  class="btn btn-danger mt-1"
+                  style="float: right"
+                  rel="noopener noreferrer"
+                  >Não aceito</a
+                >
+            </div>
+
+            <div class="row p1 d-none">
+              <div class="col-12 pergunta f1">
+                <p onclick="p1r1(true);">Sim</p>
+              </div>
+              <div class="col-12 pergunta f2">
+                <p onclick="p1r1(false);">Não</p>
+              </div>
+            </div>
+
+            <div class="row p1r1 d-none">
+              <div class="col-12">
+                <input type="checkbox" class="q1" value="false" />
+                <span>2 internações hospitalares no último ano<br /></span>
+
+                <input type="checkbox" class="q2" value="false" />
+                <span>Redução de 10% do peso em menos de 6 meses<br /></span>
+
+                <input type="checkbox" class="q3" value="false" />
+                <span
+                  >Sintomas de difícil controle apesar do tratamento clínico
+                  otimizado<br
+                /></span>
+
+                <input type="checkbox" class="q4" value="false" />
+                <span
+                  >Declínio Funcional progressivo, com maior dependência de
+                  cuidados<br
+                /></span>
+              </div>
+              <div class="col-12 w-100 pull-right">
+                <button
+                  type="submit"
+                  class="btn btn-sm btn-success mt-3"
+                  onclick="p1r1Submit();"
+                  style="float: right"
+                >
+                  Próximo
+                </button>
+              </div>
+            </div>
+
+            <div class="row p1r2 d-none">
+              <div class="col-12">
+                <input type="checkbox" class="s1" value="false" />
+                <span>Infarto do miocárdio <br /></span>
+
+                <input type="checkbox" class="s2" value="false" />
+                <span>Insuficiência cardíaca congestiva <br /></span>
+
+                <input type="checkbox" class="s3" value="false" />
+                <span>Doença vascular periférica <br /></span>
+
+                <input type="checkbox" class="s4" value="false" />
+                <span>Doença cerebrovascular <br /></span>
+
+                <input type="checkbox" class="s5" value="false" />
+                <span>Demência <br /></span>
+
+                <input type="checkbox" class="s6" value="false" />
+                <span>Doença pulmonar obstrutiva crônica <br /></span>
+
+                <input type="checkbox" class="s7" value="false" />
+                <span>Doença reumatológica <br /></span>
+
+                <input type="checkbox" class="s8" value="false" />
+                <span>Úlcera péptica <br /></span>
+
+                <input type="checkbox" class="s9" value="false" />
+                <span>Doença hepática leve <br /></span>
+
+                <input type="checkbox" class="s10" value="false" />
+                <span
+                  >Diabetes sem complicações com tratamento medicamentoso <br
+                /></span>
+
+                <input type="checkbox" class="s11" value="false" />
+                <span>Hemiplegia <br /></span>
+
+                <input type="checkbox" class="s12" value="false" />
+                <span
+                  >Diabetes sem complicações
+                  (neuropática/nefropatia/retinopatia)<br
+                /></span>
+
+                <input type="checkbox" class="s13" value="false" />
+                <span>Doença renal moderada a severa <br /></span>
+
+                <input type="checkbox" class="s14" value="false" />
+                <span>Neoplasia <br /></span>
+
+                <input type="checkbox" class="s15" value="false" />
+                <span>Leucemia <br /></span>
+
+                <input type="checkbox" class="s16" value="false" />
+                <span>Linfoma <br /></span>
+
+                <input type="checkbox" class="s17" value="false" />
+                <span>Doença hepática moderada a severa <br /></span>
+
+                <input type="checkbox" class="s18" value="false" />
+                <span>Neoplasia metastática <br /></span>
+
+                <input type="checkbox" class="s19" value="false" />
+                <span>Sindrome da imunodeficiência adquirida <br /></span>
+              </div>
+              <div class="col-12 w-100 pull-right">
+                <button
+                  type="submit"
+                  class="btn btn-sm btn-success mt-3"
+                  onclick="p1r2Submit();"
+                  style="float: right"
+                >
+                  Próximo
+                </button>
+              </div>
+            </div>
+
+            <div class="row p1r3 d-none">
+              <div class="col-12 pergunta f1">
+                <p onclick="p1r3Submit(true);">Sim</p>
+              </div>
+              <div class="col-12 pergunta f2">
+                <p onclick="p1r3Submit(false);">Não</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>

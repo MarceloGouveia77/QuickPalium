@@ -1,0 +1,28 @@
+.wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.text-wrap {
+    white-space: normal;
+  }
+
+.pergunta {
+  cursor: pointer;
+}
+
+.f1 {
+  border-bottom: 1px solid white;
+}
+
+.f2 {
+  padding-top: 15px;
+}
+
+.pergunta:hover {
+  font-weight: bold;
+}
+
+.bg-form {
+  background: #6495ED;
+}
