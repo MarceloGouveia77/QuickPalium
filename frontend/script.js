@@ -24,7 +24,7 @@ $('input[type=checkbox]').unbind('click.checks').bind('click.checks', function(e
 
 function enviarTeste(event) {
     event.preventDefault();
-    var endpoint = 'http://127.0.0.1:3333/pacientes';
+    var endpoint = 'http://sagenxti.ddns.net/pacientes';
     var data = {
         'nome': nome,
         'idade': idade,
