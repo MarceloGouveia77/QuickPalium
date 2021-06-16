@@ -12,6 +12,12 @@
     />
     <link rel="stylesheet" href="style.css" />
     <title>QuickPalium</title>
+    <style>
+      tr:hover {
+        background-color: deepskyblue;
+        color: white !important;
+      }
+    </style>
   </head>
   <body>
     <div class="wrapper">
@@ -35,6 +41,7 @@
                     <th scope="col">Sexo</th>
                     <th scope="col">Idade</th>
                     <th scope="col">Resultado</th>
+                    <th scope="col">#</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -60,6 +67,27 @@
     <script src="script.js"></script>
 
     <script>
+      function remover(id){
+          var endpoint = 'http://127.0.0.1:3333/pacientes';
+          var data = {
+            'id': id,
+          }
+
+          $.ajax({
+          url: endpoint,
+          type: "DELETE",
+          data: JSON.stringify(data),
+          cache: false,
+          processData: false,
+          contentType: 'application/json',
+          success: function (data) {
+              window.alert("AVALIAÇÃO REMOVIDA !");
+          }
+      });
+      }
+    </script>
+
+    <script>
         $.get('http://127.0.0.1:3333/pacientes', function(res) {
             res.forEach(paciente => {
                 $("tbody").append(
@@ -70,6 +98,7 @@
                         + `<td>${paciente.sexo}</td>`
                         + `<td>${paciente.idade}</td>`
                         + `<td>${paciente.resultado}</td>`
+                        + `<td><a onclick="remover(${paciente.id})" href="#" style="text-decoration: none"><span class="text-danger font-weight-bold">DEL</span></a>`
                     + '</tr>'
                 )
             });

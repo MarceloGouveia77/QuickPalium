@@ -84,8 +84,8 @@ function exibeResultado(res){
 
     $(".card-body").append(
         `<h3 class="text-center">${res}</h3>`
-        + '<a href="/" class="btn btn-sm btn-danger">Reiniciar</a>'
         + '<h2 id="codigo_atendimento"></h2>'
+        + '<a href="/" class="btn btn-sm btn-danger">Reiniciar</a>'
     );
 
     resultado = res;

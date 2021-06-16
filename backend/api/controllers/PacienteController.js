@@ -10,12 +10,6 @@ exports.listar = function(req, res) {
 
 exports.cadastrar = function(req, res) {
     const { nome, sexo, idade, resultado } = req.body
-
-    console.log(nome)
-    console.log(sexo)
-    console.log(idade)
-    console.log(resultado)
-
     const currentdate = new Date(); 
 
     const data = currentdate.getDate() + "/"
@@ -27,5 +21,14 @@ exports.cadastrar = function(req, res) {
 
     console.log(execute.lastInsertRowid);
 
-    res.json({"atendimento": execute.lastInsertRowid})
+    res.json({"atendimento": execute.lastInsertRowid});
+};
+
+exports.remover = function(req, res) {
+    const { id } = req.body;
+
+    const paciente = db.prepare('DELETE FROM paciente WHERE id=?');
+    const execute = paciente.run(id);
+
+    res.json({"status": execute.status});
 }
