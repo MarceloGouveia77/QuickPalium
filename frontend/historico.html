@@ -68,7 +68,7 @@
 
     <script>
       function remover(id){
-          var endpoint = 'http://sagenxti.ddns.net/pacientes';
+          var endpoint = 'http://sagenxti.ddns.net/api/pacientes';
           var data = {
             'id': id,
           }
@@ -89,7 +89,7 @@
     </script>
 
     <script>
-        $.get('http://sagenxti.ddns.net/pacientes', function(res) {
+        $.get('http://sagenxti.ddns.net/api/pacientes', function(res) {
             res.forEach(paciente => {
                 $("tbody").append(
                     '<tr>'
