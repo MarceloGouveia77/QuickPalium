@@ -24,7 +24,7 @@ $('input[type=checkbox]').unbind('click.checks').bind('click.checks', function(e
 
 function enviarTeste(event) {
     event.preventDefault();
-    var endpoint = 'http://127.0.0.1:3333/pacientes'; // PEGA A URL DO DJANGO TEMPLATE
+    var endpoint = 'http://127.0.0.1:3333/pacientes';
     var data = {
         'nome': nome,
         'idade': idade,
@@ -40,7 +40,8 @@ function enviarTeste(event) {
         processData: false,
         contentType: 'application/json',
         success: function (data) {
-            window.alert("TESTE FINALIZADO, CLIQUE EM OK PARA REINICIAR");
+            $("#codigo_atendimento").append(`CÓDIGO: ${data.atendimento}`)
+            window.alert("TESTE FINALIZADO");
         }
     });
     return false;
@@ -78,11 +79,13 @@ function exibeResultado(res){
     mudarTitulo("RESULTADO");
 
     $(".card-body").removeClass("bg-info");
-    $(".card-body").addClass("bg-success"); 
+    $(".card-body").addClass("bg-success text-center"); 
     $(".card-header").addClass("text-center");   
 
     $(".card-body").append(
         `<h3 class="text-center">${res}</h3>`
+        + '<a href="/" class="btn btn-sm btn-danger">Reiniciar</a>'
+        + '<h2 id="codigo_atendimento"></h2>'
     );
 
     resultado = res;

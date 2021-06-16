@@ -25,7 +25,7 @@ exports.cadastrar = function(req, res) {
     const paciente = db.prepare('INSERT INTO paciente (data, nome, idade, sexo, resultado) VALUES (?, ?, ?, ?, ?)');
     const execute = paciente.run(data, nome, idade, sexo, resultado);
 
-    console.log(execute.changes);
+    console.log(execute.lastInsertRowid);
 
-    res.json({"status": "OK"})
+    res.json({"atendimento": execute.lastInsertRowid})
 }
