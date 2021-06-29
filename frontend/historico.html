@@ -37,7 +37,6 @@
                   <tr>
                     <th scope="col">COD</th>
                     <th scope="col">Data</th>
-                    <th scope="col">Nome</th>
                     <th scope="col">Sexo</th>
                     <th scope="col">Idade</th>
                     <th scope="col">Resultado</th>
@@ -68,7 +67,7 @@
 
     <script>
       function remover(id){
-          var endpoint = 'http://sagenxti.ddns.net/api/pacientes';
+          var endpoint = 'http://sagenx.ddns.net/api/pacientes';
           var data = {
             'id': id,
           }
@@ -89,13 +88,13 @@
     </script>
 
     <script>
-        $.get('http://sagenxti.ddns.net/api/pacientes', function(res) {
+      // http://sagenxti.ddns.net/api/pacientes
+        $.get('http://sagenx.ddns.net/api/pacientes', function(res) {
             res.forEach(paciente => {
                 $("tbody").append(
                     '<tr>'
                         + `<td>${paciente.id}</td>`
                         + `<td>${paciente.data}</td>`
-                        + `<td>${paciente.nome}</td>`
                         + `<td>${paciente.sexo}</td>`
                         + `<td>${paciente.idade}</td>`
                         + `<td>${paciente.resultado}</td>`

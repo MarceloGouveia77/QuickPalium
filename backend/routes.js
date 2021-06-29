@@ -7,4 +7,6 @@ router.get("/pacientes", pacienteController.listar);
 router.post("/pacientes", pacienteController.cadastrar);
 router.delete("/pacientes", pacienteController.remover);
 
+router.post("/sugestao", pacienteController.sugestao);
+
 module.exports = router;

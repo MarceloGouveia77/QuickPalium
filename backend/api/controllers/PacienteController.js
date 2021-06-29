@@ -24,6 +24,16 @@ exports.cadastrar = function(req, res) {
     res.json({"atendimento": execute.lastInsertRowid});
 };
 
+exports.sugestao = function(req, res) {
+    const { medico, sugestao } = req.body;
+
+    const sugestaoDB = db.prepare('INSERT INTO sugestao (medico, sugestao) VALUES (?, ?)');
+    const execute = sugestaoDB.run(medico, sugestao);
+
+    res.json({"msg": "Sugestão enviada com sucesso"});
+
+};
+
 exports.remover = function(req, res) {
     const { id } = req.body;
 

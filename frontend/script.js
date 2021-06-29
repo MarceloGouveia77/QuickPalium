@@ -24,7 +24,7 @@ $('input[type=checkbox]').unbind('click.checks').bind('click.checks', function(e
 
 function enviarTeste(event) {
     event.preventDefault();
-    var endpoint = 'http://sagenxti.ddns.net/api/pacientes';
+    var endpoint = 'http://sagenx.ddns.net/api/pacientes';
     var data = {
         'nome': nome,
         'idade': idade,
@@ -40,8 +40,8 @@ function enviarTeste(event) {
         processData: false,
         contentType: 'application/json',
         success: function (data) {
-            $("#codigo_atendimento").append(`CÓDIGO: ${data.atendimento}`)
-            window.alert("TESTE FINALIZADO");
+            $("#codigo_atendimento").append(`CÓDIGO: ${data.atendimento}`);
+            window.alert("vai se fuder");
         }
     });
     return false;
@@ -79,19 +79,52 @@ function exibeResultado(res){
     mudarTitulo("RESULTADO");
 
     $(".card-body").removeClass("bg-info");
-    $(".card-body").addClass("bg-success text-center"); 
+    $(".card-body").addClass("bg-warning text-center"); 
     $(".card-header").addClass("text-center");   
 
     $(".card-body").append(
-        `<h3 class="text-center">${res}</h3>`
+        `<div class="text-center"> <img src="logo-2.png"> </div>`
+        + `<h3 class="text-center">${res}</h3>`
         + '<h2 id="codigo_atendimento"></h2>'
-        + '<a href="/" class="btn btn-sm btn-danger">Reiniciar</a>'
+        + '<a href="/" class="btn btn-sm btn-primary mt-2">Reiniciar</a>'
+        + `<div class="row mt-2" id="sugestao-id">`
+        + `<div class="col-12 text-center mt-2 mb-2">Deixe sua avaliação ou sugestão.</div>`
+        + `<div class="col-md-4"></div>`
+        + `<div class="col-md-4"><input type="text" class="form-control" id="medico" placeholder="Médico aplicador" name="medico" required /><textarea row="4" class="form-control mt-1" id="sugestao" placeholder="Escreva sua sugestão"></textarea></div>`
+        + `<div class="col-md-4"></div>`
+        + `<div class="col-12 text-center mt-2 mb-2"><button class="btn btn-sm btn-primary" onclick="enviarSugestao(event);">Enviar</button></div>`
+        + `</div>`
     );
 
     resultado = res;
-    enviarTeste(event);
+    //enviarTeste(event);
 
 }
+
+function enviarSugestao(event){
+    event.preventDefault();
+    var endpoint = 'http://sagenx.ddns.net/api/sugestao';
+    var data = {
+        'medico': $("#medico").val(),
+        'sugestao': $("#sugestao").val(),
+    }
+
+    $.ajax({
+        url: endpoint,
+        type: "POST",
+        data: JSON.stringify(data),
+        cache: false,
+        processData: false,
+        contentType: 'application/json',
+        success: function (data) {
+            $("#sugestao-id").empty();
+            $("#sugestao-id").append(
+                + `<div class="col-12 text-center mt-2 mb-2" style="font-size: 24px;">Sugestão enviada com sucesso!.</div>`
+            );
+        }
+    });
+    return false;
+};
 
 function p1r1(val) {
     if (origem == "p2") {

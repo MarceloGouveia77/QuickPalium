@@ -17,10 +17,13 @@
     <div class="wrapper">
       <div class="col-12" style="margin-top: 5%">
         <div class="row">
-          <div class="col-6">
+          <div class="col-md-1 col-4">
+            <img src="borb-2.png" alt="" srcset="">
+          </div>
+          <div class="col-md-7 col-4 text-left mt-3">
             <h3>QuickPalium</h3>
           </div>
-          <div class="col-6">
+          <div class="col-md-4 col-4 mt-4">
             <a href="/historico.html" style="float: right;" target="_blank" class="btn btn-sm btn-primary">Histórico</a>
           </div>
         </div>
@@ -34,8 +37,8 @@
           </div>
           <div class="card-body bg-form text-white">
             <div class="row cadastro">
-              <form id="cadastro-form" method="POST">
-                <div class="mb-3">
+              <form id="cadastro-form" method="POST" onsubmit="return false">
+                <div class="mb-3 d-none">
                   <label for="nome" class="form-label">Nome</label>
                   <input
                     type="text"
@@ -67,9 +70,14 @@
                   style="float: right; cursor: pointer;"
                   onclick="termo();"
                   rel="noopener noreferrer"
-                  >Próximo</a
+                  >Iniciar</a
                 >
               </form>
+
+              <div class="col-12 mt-3" style="border-top: 1px solid white;">
+                <p style="font-size: 9pt; margin: 10px 50px 0px 50px; word-wrap: break-word;">Esta é a versão inicial de uma ferramenta para complementar a decisão clínica quanto a necessidade de uma abordagem palitiva em pacientes internados em unidades de terapia intensiva. Nossa intenção é auxiliar os médicos a definir melhor as prioridades de cuidados e estabelecer um plano terapêutico, assim impactando de forma positiva na a redução do tempo de internação dos pacientes com consequente otimização no uso de recursos hospitalares.
+                  Atenção: nenhuma ferramenta deve substituir a decisão médica! Um plano de cuidados deve ser estabelecido após análise de toda situação clínica e soma de todas as variáveis.</p>
+              </div>
             </div>
 
             <div class="row termo d-none">

@@ -24,5 +24,21 @@
 }
 
 .bg-form {
-  background: #6495ED;
+  background: #2196f3;
+}
+
+input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #c5c5c5 !important;
+}
+
+textarea::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #c5c5c5 !important;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #c5c5c5;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color:#c5c5c5;
 }
