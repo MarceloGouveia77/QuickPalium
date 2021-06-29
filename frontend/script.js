@@ -41,7 +41,6 @@ function enviarTeste(event) {
         contentType: 'application/json',
         success: function (data) {
             $("#codigo_atendimento").append(`CÓDIGO: ${data.atendimento}`);
-            window.alert("vai se fuder");
         }
     });
     return false;
