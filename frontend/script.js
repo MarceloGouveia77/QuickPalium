@@ -24,7 +24,7 @@ $('input[type=checkbox]').unbind('click.checks').bind('click.checks', function(e
 
 function enviarTeste(event) {
     event.preventDefault();
-    var endpoint = 'http://sagenx.ddns.net/api/pacientes';
+    var endpoint = 'http://sagenxti.ddns.net/api/pacientes';
     var data = {
         'nome': nome,
         'idade': idade,
@@ -103,7 +103,7 @@ function exibeResultado(res){
 
 function enviarSugestao(event){
     event.preventDefault();
-    var endpoint = 'http://sagenx.ddns.net/api/sugestao';
+    var endpoint = 'http://sagenxti.ddns.net/api/sugestao';
     var data = {
         'medico': $("#medico").val(),
         'sugestao': $("#sugestao").val(),
