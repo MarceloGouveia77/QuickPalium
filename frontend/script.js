@@ -97,7 +97,7 @@ function exibeResultado(res){
     );
 
     resultado = res;
-    //enviarTeste(event);
+    enviarTeste(event);
 
 }
 
@@ -119,7 +119,7 @@ function enviarSugestao(event){
         success: function (data) {
             $("#sugestao-id").empty();
             $("#sugestao-id").append(
-                + `<div class="col-12 text-center mt-2 mb-2" style="font-size: 24px;">Sugestão enviada com sucesso!.</div>`
+                `<div class="col-12 text-center mt-2 mb-2" style="font-size: 24px;">Sugestão enviada com sucesso!.</div>`
             );
         }
     });
