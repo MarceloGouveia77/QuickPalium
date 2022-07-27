@@ -23,20 +23,23 @@
           <div class="col-md-7 col-4 text-left mt-3">
             <h3>QuickPalium</h3>
           </div>
-          <div class="col-md-4 col-4 mt-4">
-            <a href="/historico.html" style="float: right;" target="_blank" class="btn btn-sm btn-primary">Histórico</a>
-          </div>
+	  <div class="row int-k pt-2">
+	  <p style="border-top: 1px solid black; font-size: 9pt; font-weight:bold;  padding: 20px 70px 0px 70px;  word-wrap: break-word; text-align: justify; text-justify: inter-word;">Esta é a versão inicial de uma ferramenta para complementar a decisão clínica quanto a necessidade de uma abordagem palitiva em pacientes internados em unidades de terapia intensiva. Nossa intenção é auxiliar os médicos a estabelecer um plano terapêutico.
+                <br>
+                <strong>Atenção</strong>: nenhuma ferramenta deve substituir a decisão médica! Um plano de cuidados deve ser estabelecido após análise de toda situação clínica e soma de todas as variáveis.
+                </p>
+	  </div>
         </div>
       </div>
 
-      <div class="col-12 mt-4">
+      <div class="col-12 mt-2">
         <div class="card">
           <div class="card-header">
-              <h3 class="card-title">Cadastro</h3>
-            </div>
+            <h3 class="card-title"> </h3>
+          </div>
           </div>
           <div class="card-body bg-form text-white">
-            <div class="row cadastro">
+            <div class="row cadastro d-none">
               <form id="cadastro-form" method="POST" onsubmit="return false">
                 <div class="mb-3 d-none">
                   <label for="nome" class="form-label">Nome</label>
@@ -49,14 +52,14 @@
                   />
                 </div>
                 <div class="mb-3">
-                  <label for="sexo" class="form-label">Sexo</label>
+                  <label for="sexo" class="form-label">Sexo do Paciente</label>
                   <select class="form-select" id="sexo" name="sexo">
                     <option selected value="Masculino">Masculino</option>
                     <option value="Feminino">Feminino</option>
                   </select>
                 </div>
                 <div class="mb-3">
-                  <label for="idade" class="form-label">Idade</label>
+                  <label for="idade" class="form-label">Idade do Paciente</label>
                   <input
                     type="text"
                     class="form-control"
@@ -68,20 +71,17 @@
                 <a
                   class="btn btn-success"
                   style="float: right; cursor: pointer;"
-                  onclick="termo();"
+                  onclick="start();"
                   rel="noopener noreferrer"
                   >Iniciar</a
                 >
               </form>
 
-              <div class="col-12 mt-3" style="border-top: 1px solid white;">
-                <p style="font-size: 9pt; margin: 10px 50px 0px 50px; word-wrap: break-word;">Esta é a versão inicial de uma ferramenta para complementar a decisão clínica quanto a necessidade de uma abordagem palitiva em pacientes internados em unidades de terapia intensiva. Nossa intenção é auxiliar os médicos a definir melhor as prioridades de cuidados e estabelecer um plano terapêutico, assim impactando de forma positiva na a redução do tempo de internação dos pacientes com consequente otimização no uso de recursos hospitalares.
-                  Atenção: nenhuma ferramenta deve substituir a decisão médica! Um plano de cuidados deve ser estabelecido após análise de toda situação clínica e soma de todas as variáveis.</p>
-              </div>
+             
             </div>
 
-            <div class="row termo d-none">
-              <p
+            <div class="row termo">
+		    <p
                 style="
                   margin-top: 0cm;
                   margin-right: 0cm;
@@ -756,7 +756,7 @@
               <a
                   class="btn btn-success mt-3"
                   style="float: right; cursor: pointer;"
-                  onclick="start();"
+                  onclick="cadastro();"
                   rel="noopener noreferrer"
                   >Eu aceito</a
                 >
@@ -909,6 +909,6 @@
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
       crossorigin="anonymous"
     ></script>
-    <script src="script.js"></script>
+    <script src="script1.js"></script>
   </body>
 </html>

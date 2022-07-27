@@ -24,7 +24,7 @@ $('input[type=checkbox]').unbind('click.checks').bind('click.checks', function(e
 
 function enviarTeste(event) {
     event.preventDefault();
-    var endpoint = 'http://sagenxti.ddns.net/api/pacientes';
+    var endpoint = 'http://18.228.8.1/api/pacientes';
     var data = {
         'nome': nome,
         'idade': idade,
@@ -50,32 +50,37 @@ function mudarTitulo(titulo) {
     $(".card-title").text(titulo);
 }
 
-function termo() {
+function cadastro() {
     nome = $("#nome").val();
     idade = $("#idade").val();
     sexo = $("#sexo").val();
-
-    $(".card-body").removeClass("bg-form text-white")
-    $(".card-title").text("Termo");
-    $(".cadastro").addClass("d-none");
-    $(".termo").removeClass("d-none");
+	
+    $(".int-k").addClass("d-none");
+    $(".card-body").addClass("bg-form text-white")
+    $(".card-title").text("Dados do Paciente");
+    $(".cadastro").removeClass("d-none");
+    $(".termo").addClass("d-none");
     
-    dataFormatada();
-    $('.participante-termo').text(nome);
+    //dataFormatada();
+    //$('.participante-termo').text(nome);
 }
 
 function start(){
     $(".card-body").addClass("bg-form text-white")
-
+    $(".cadastro").addClass("d-none");
     $(".card-title").text("Você se surpreenderia se este paciente falecesse nos próximos 12 meses?");
-    $(".termo").addClass("d-none");
     $(".p1").removeClass("d-none");
 
 }
 
 function exibeResultado(res){
-    $(".card-body").empty();
+    $(".cadastro").addClass("d-none");
     mudarTitulo("RESULTADO");
+    $(".p1").addClass("d-none");
+    $(".p1r1").addClass("d-none");
+    $(".p1r2").addClass("d-none");
+    $(".p1r3").addClass("d-none");
+    $(".p2").addClass("d-none");
 
     $(".card-body").removeClass("bg-info");
     $(".card-body").addClass("bg-warning text-center"); 
@@ -87,7 +92,7 @@ function exibeResultado(res){
         + '<h2 id="codigo_atendimento"></h2>'
         + '<a href="/" class="btn btn-sm btn-primary mt-2">Reiniciar</a>'
         + `<div class="row mt-2" id="sugestao-id">`
-        + `<div class="col-12 text-center mt-2 mb-2">Deixe sua avaliação ou sugestão.</div>`
+        + `<div class="col-12 text-center mt-2 mb-2" style="padding-left: 20%; padding-right: 20%">Encontrou alguma dificuldade ao usar a ferramenta? Tem alguma ideia para facilitar o uso? Compartilhe conosco suas dificuldades, críticas ou sugestões.</div>`
         + `<div class="col-md-4"></div>`
         + `<div class="col-md-4"><input type="text" class="form-control" id="medico" placeholder="Médico aplicador" name="medico" required /><textarea row="4" class="form-control mt-1" id="sugestao" placeholder="Escreva sua sugestão"></textarea></div>`
         + `<div class="col-md-4"></div>`
@@ -102,7 +107,7 @@ function exibeResultado(res){
 
 function enviarSugestao(event){
     event.preventDefault();
-    var endpoint = 'http://sagenxti.ddns.net/api/sugestao';
+    var endpoint = 'http://18.228.8.1/api/sugestao';
     var data = {
         'medico': $("#medico").val(),
         'sugestao': $("#sugestao").val(),

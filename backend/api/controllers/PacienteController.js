@@ -34,6 +34,21 @@ exports.sugestao = function(req, res) {
 
 };
 
+exports.listarSugestoes  = function(req, res){
+    const sugestoes = db.prepare('SELECT * FROM sugestao').all();
+
+    res.json(sugestoes);
+}
+
+exports.removerSugestao = function(req, res){
+    const { id } = req.body;
+    
+    const sugestao = db.prepare('DELETE FROM sugestao WHERE id=?');
+    const execute = sugestao.run(id);
+
+    res.json({"status": execute.status});
+}
+
 exports.remover = function(req, res) {
     const { id } = req.body;
 

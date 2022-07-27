@@ -28,19 +28,17 @@
       <div class="col-12 mt-4">
         <div class="card">
           <div class="card-header">
-            <h3 class="card-title">Histórico</h3>
+            <h3 class="card-title">Sugestões</h3>
           </div>
         </div>
         <div class="card-body">
             <table class="table table-striped">
                 <thead>
                   <tr>
-                    <th scope="col">COD</th>
-                    <th scope="col">Data</th>
-                    <th scope="col">Sexo</th>
-                    <th scope="col">Idade</th>
-                    <th scope="col">Resultado</th>
-                    <th scope="col">#</th>
+	            <th scope="col">ID</th>
+                    <th scope="col">Medico</th>
+                    <th scope="col">Sugestão</th>
+		    <th scope="col">#</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -67,7 +65,7 @@
 
     <script>
       function remover(id){
-          var endpoint = 'http://18.228.8.1/api/pacientes';
+          var endpoint = 'http://18.228.8.1/api/sugestao';
           var data = {
             'id': id,
           }
@@ -80,7 +78,7 @@
           processData: false,
           contentType: 'application/json',
           success: function (data) {
-              window.alert("AVALIAÇÃO REMOVIDA !");
+              window.alert("SUGESTÃO REMOVIDA !");
               window.location.reload();
           }
       });
@@ -89,16 +87,14 @@
 
     <script>
       // http://sagenxti.ddns.net/api/pacientes
-        $.get('http://18.228.8.1/api/pacientes', function(res) {
-            res.forEach(paciente => {
+        $.get('http://18.228.8.1/api/sugestoes', function(res) {
+            res.forEach(sugestao => {
                 $("tbody").append(
                     '<tr>'
-                        + `<td>${paciente.id}</td>`
-                        + `<td>${paciente.data}</td>`
-                        + `<td>${paciente.sexo}</td>`
-                        + `<td>${paciente.idade}</td>`
-                        + `<td>${paciente.resultado}</td>`
-                        + `<td><a onclick="remover(${paciente.id})" style="text-decoration: none; cursor: pointer;"><span class="text-danger font-weight-bold">DEL</span></a>`
+                        + `<td>${sugestao.id}</td>`
+                        + `<td>${sugestao.medico}</td>`
+                        + `<td>${sugestao.sugestao}</td>`
+                        + `<td><a onclick="remover(${sugestao.id})" style="text-decoration: none; cursor: pointer;"><span class="text-danger font-weight-bold">DEL</span></a>`
                     + '</tr>'
                 )
             });
