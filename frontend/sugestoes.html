@@ -65,7 +65,7 @@
 
     <script>
       function remover(id){
-          var endpoint = 'http://18.228.8.1/api/sugestao';
+          var endpoint = 'https://quickpalium.bpocket.com.br/api/sugestao';
           var data = {
             'id': id,
           }
@@ -87,7 +87,7 @@
 
     <script>
       // http://sagenxti.ddns.net/api/pacientes
-        $.get('http://18.228.8.1/api/sugestoes', function(res) {
+        $.get('https://quickpalium.bpocket.com.br/api/sugestoes', function(res) {
             res.forEach(sugestao => {
                 $("tbody").append(
                     '<tr>'
